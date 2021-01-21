@@ -1,0 +1,841 @@
+<html>
+<head>
+<title>OLL</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf_8">
+<style>
+td.kihon {font-size: 28px; background-color:green}
+td.kotsu {font-size: 28px; background-color:lightgreen}
+td.alg {font-size: 28px; background-color:yellow}
+td.new {font-size: 28px; background-color:lightblue}
+td.bad {font-size: 28px; background-color:pink}
+td.small {font-size: 16px; }
+th {font-size: 28px; }
+td {font-size: 28px; }
+kotsu {bg-color: green; }
+</style>
+
+<script src="jquery-3.4.1.min.js"></script>
+<script src="jquery.cookie.js"></script>
+<script>
+<!--
+var backgroundColor = {}
+
+jQuery( function() {
+	a=0;
+	var ids = new Array(57);
+	for (i=1;i<=57;i++) {
+		ids[i-1] = "o"+i;
+	}
+	ids.forEach( function (id) {
+		a=a+1;
+	    backgroundColorchange(id);
+	});
+//	alert(a);
+
+
+//    jQuery( '#i1' ).click( function () {
+//	alert("click1!");
+//        backgroundColorchange( 'i1' );
+//    } );
+//    jQuery( '#i2' ).click( function () {
+//        backgroundColorchange( 'i2' );
+//    } );
+//    jQuery( '#s1' ).click( function () {
+	$('.event').on('click', function(){
+//		alert($(this).data('hoge'));
+		id = $(this).data('hoge');
+        backgroundColorchange( id );
+    } );
+
+
+    function backgroundColorchange( id ){
+//	alert("clicked!");
+//		alert(id);
+       if( backgroundColor[id] == undefined ) {
+//	alert("undef");
+            backgroundColor[id] = jQuery.cookie( id );
+            if( backgroundColor[id] == undefined ){
+                backgroundColor[id] = 'white';
+            }
+        } else if (backgroundColor[id] == 'white') {
+               backgroundColor[id] = 'yellow';
+        } else if (backgroundColor[id] == 'yellow') {
+               backgroundColor[id] = 'lightgreen';
+        } else if (backgroundColor[id] == 'lightgreen') {
+               backgroundColor[id] = 'red';
+        } else if (backgroundColor[id] == 'red') {
+               backgroundColor[id] = 'white';
+        }
+//	alert(backgroundColor[id]);
+
+        jQuery.cookie( id, backgroundColor[id] , { expires: 2000 } );
+//        jQuery( '#'+id ).css( { 'backgroundColor': backgroundColor[id] } );
+        jQuery( '#_'+id ).css( { 'backgroundColor': backgroundColor[id] } );
+    }
+} );
+// -->
+</script>
+</head>
+<body>
+<br>
+<br>
+<br>
+<div align="center">
+
+<br>
+
+<script type="text/javascript">
+   var imglist = new Array(
+      "15687732336Rw-247x247.jpg",
+      "15863085719Zp-510x510.jpg",
+      "2102010800156-510x340.jpg",
+      "2102011800131-15-510x510.jpg",
+      "2102011800858-510x340.jpg",
+      "2102021800930-510x340.jpg",
+      "2102030101431-1-510x510.jpg",
+      "2102040700235-15-510x510.jpg",
+      "2102040900437-16-510x510.jpg",
+      "2103010101830.1-510x340.jpg",
+      "2103010102134-510x340.jpg",
+      "2103010102233-510x340.jpg",
+      "2105010300138-510x340.jpg",
+      "2105010400135-16-510x340.jpg",
+      "2108010100630-510x510.jpg",
+      "gan356i_stickerless-510x510.jpg",
+      "main-1-510x510.jpg",
+      "main3-510x510.jpg",
+      "2103010101533-510x340.jpg",
+ );
+
+   var itemlist = new Array(
+      "QiYi Thunderclap 3x3x3 V3 M ステッカーレス",
+      "QiYi Duomo Cube ステッカーレス",
+      "QiYi QiCheng Jelly",
+      "QiYi Pyramorphix ステッカーレス",
+      "QiYi Mastermorphix Jelly",
+      "QiYi Six Spot Cube ステッカーレス",
+      "QiYi Valk3 M ステッカーレス",
+      "QiYi XMD Bell ステッカーレス",
+      "QiYi XMD Galaxy V2L M Sculpture ステッカーレス",
+      "GAN356 X v2 ステッカーレス",
+      "GAN354 M v2 ステッカーレス",
+      "GAN356 M ステッカーレス",
+      "YuXin Little Magic 4x4x4 M ステッカーレス",
+      "Yuxin Little Magic 5x5x5 M ステッカーレス",
+      "DaYan TengYun 3x3x3 V2 M ステッカーレス",
+      "GAN356 i V2 ステッカーレス",
+      "GAN330 キーチェーン ステッカーレス",
+      "QiYi XMD Volt V2 M 半磁版 Semi Magnetic(/) ステッカーレス（ブラックパネル）",
+      "GAN356 XS ステッカーレス",
+ );
+   var itemlink = new Array(
+      "https://store.smartship.co.jp/product/qiyi-thunderclap-3x3x3-v3-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-duomo-cube-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-qicheng-jelly/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-pyramorphix-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-mastermorphix-jelly/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-six-spot-cube-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-valk3-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-xmd-bell-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-xmd-galaxy-v2l-m-sculpture-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/gan356-x-v2-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/gan354-m-v2-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/gan356-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/yuxin-little-magic-4x4x4-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/yuxin-little-magic-5x5x5-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/dayan-tengyun-3x3x3-v2-m-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/gan356-i-v2-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/gan330-keychain-stickerless/?ref=72",
+      "https://store.smartship.co.jp/product/qiyi-xmd-volt-v2-m-semi-magnetic-stickerless-black-panel/?ref=72",
+      "https://store.smartship.co.jp/product/gan356-xs-stickerless/?ref=72",
+ );
+
+   var selectnum = Math.floor(Math.random() * imglist.length);
+   var output0 = "<a href=\"https://store.smartship.co.jp/?ref=72\"><img src=images/items/LOGO_store_fixed_20190527.png width=200 border=1></a><br>";
+   var output1 = "<a href=\""+ itemlink[selectnum] + "\"><img src=images/items/" + imglist[selectnum] + " width=200 border=1></a><br>";
+   var output2 = "<b>"+itemlist[selectnum]+"</b>";
+//   document.write(output0);
+//   document.write(output1);
+//   document.write(output2);
+</script>
+<p>
+
+
+<Font size = "+5"><b>ＯＬＬ</b></font>
+<br>
+キューブをクリックすると、行の色が変えられます！<br>
+<table border="1">
+<tr><td class="small">黄色</td><td class="small">覚え中</td></tr>
+<tr><td class="small">緑</td><td class="small">覚え終わった</td></tr>
+<tr><td class="small">赤</td><td class="small">注目</td></tr>
+</table>
+などとしてみましょう！<p>
+
+<Font size = "6">
+<a href="../../pll/index.html">PLLはこちら！</a>
+</font>
+<hr>
+
+<table style="border-collapse: collapse;" border="1">
+<tbody>
+<tr>
+<th width="10">呼称</th>
+<th width="100">画像</th>
+<th width="300">分類</th>
+<th width="300">備考</th>
+<th width="120">解説動画</th>
+<th width="120">アニメ</th>
+</tr>
+
+<tr id="_0" style="display: none;">
+<td>0</td>
+<td class="event" data-hoge="0"><img src="images/0.png" width="100" height="100"/></td>
+<td width="300">ドットだけで側面の両側が三連</td>
+<td width="300">三連を左右に持って開始</td>
+<td align="center"><a href="https://youtu.be/UAe5lt_mi0o"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?type=alg&stage=OLL&alg=R_U2-_R2-_F_R_F-_U2-_R-_F_R_F-&view=fullscreen" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o1" style="display: unnone;">
+<td>1</td>
+<td class="event" data-hoge="o1"><img src="images/1.png" width="100" height="100"/></td>
+<td width="300">ドットだけで側面の両側が三連</td>
+<td width="300">三連を左右に持って開始</td>
+<td align="center"><a href="https://youtu.be/h-xbk7ovJ18"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?type=alg&stage=OLL&alg=R_U2-_R2-_F_R_F-_U2-_R-_F_R_F-&view=fullscreen" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o2" style="display: unnone;">
+<td>2</td>
+<td class="event" data-hoge="o2"><img src="images/2.png" width="100" height="100"/></td>
+<td width="300">ドットだけで側面が三連と一つ</td>
+<td width="300">三連を左にして持って一層6手OLL+ニ層6手OLL</td>
+<td align="center"><a href="https://youtu.be/CZodRYpMQQ0"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=Fw_R_U_R-_U-_Fw-_U-_F_R_U_R-_U-_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o3" style="display: unnone;">
+<td>3</td>
+<td class="event" data-hoge="o3"><img src="images/3.png" width="100" height="100"/></td>
+<td width="300">コーナー一つだけ黄色</td>
+<td width="300">コーナーと、側面の二連を右にして持つ</td>
+<td align="center"><a href="https://youtu.be/CFrUlHcq71A"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?type=alg&stage=OLL&alg=F_R_U_R-_U-_F-_Fw_R_U_R-_U-_Fw-&view=fullscreen" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o4" style="display: unnone;">
+<td>4</td>
+<td class="event" data-hoge="o4"><img src="images/4.png" width="100" height="100"/></td>
+<td width="300">コーナー一つだけ黄色</td>
+<td width="300">コーナーと、側面の二連を右にして持つ</td>
+<td align="center"><a href="https://youtu.be/_oIW26dxv2E"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=Fw_R_U_R-_U-_Fw-_U_F_R_U_R-_U-_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o5" style="display: unnone;">
+<td>5</td>
+<td class="event" data-hoge="o5"><img src="images/5.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o6" style="display: unnone;">
+<td>6</td>
+<td class="event" data-hoge="o6"><img src="images/6.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o7" style="display: unnone;">
+<td>7</td>
+<td class="event" data-hoge="o7"><img src="images/7.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o8" style="display: unnone;">
+<td>8</td>
+<td class="event" data-hoge="o8"><img src="images/8.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o9" style="display: unnone;">
+<td>9</td>
+<td class="event" data-hoge="o9"><img src="images/9.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o10" style="display: unnone;">
+<td>10</td>
+<td class="event" data-hoge="o10"><img src="images/10.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o11" style="display: unnone;">
+<td>11</td>
+<td class="event" data-hoge="o11"><img src="images/11.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o12" style="display: unnone;">
+<td>12</td>
+<td class="event" data-hoge="o12"><img src="images/12.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o13" style="display: unnone;">
+<td>13</td>
+<td class="event" data-hoge="o13"><img src="images/13.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o14" style="display: unnone;">
+<td>14</td>
+<td class="event" data-hoge="o14"><img src="images/14.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o15" style="display: unnone;">
+<td>15</td>
+<td class="event" data-hoge="o15"><img src="images/15.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o16" style="display: unnone;">
+<td>16</td>
+<td class="event" data-hoge="o16"><img src="images/16.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o17" style="display: unnone;">
+<td>17</td>
+<td class="event" data-hoge="o17"><img src="images/17.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o18" style="display: unnone;">
+<td>18</td>
+<td class="event" data-hoge="o18"><img src="images/18.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o19" style="display: unnone;">
+<td>19</td>
+<td class="event" data-hoge="o19"><img src="images/19.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o20" style="display: unnone;">
+<td>20</td>
+<td class="event" data-hoge="o20"><img src="images/20.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o21" style="display: unnone;">
+<td>21</td>
+<td class="event" data-hoge="o21"><img src="images/21.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順</td>
+<td align="center"><a href="https://youtu.be/f3dfyAlbxbA"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U2_R-_U-R_U_R-U-_R_U-R-" target="_anime">前後</a>
+<BR>
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U_R-_U_R_U-_R-_U_R_U2-_R-" target="_anime">左右</a>
+</td>
+</tr>
+
+<tr id="_o22" style="display: unnone;">
+<td>22</td>
+<td class="event" data-hoge="o22"><img src="images/22.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順</td>
+<td align="center"><a href="https://youtu.be/ldQbsX8wMac"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U2-_R2-_U-_R2_U-_R2-_U2-R" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o23" style="display: unnone;">
+<td>23</td>
+<td class="event" data-hoge="o23"><img src="images/23.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順</td>
+<td align="center"><a href="https://youtu.be/ss_EgU8bPf8"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R2-_D-_R_U2-_R-_D_R_U2-_R" target="_anime">後ろ向き</a><br>
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R2_D_R-_U2_R_D-_R-_U2_R-" target="_anime">前向き</a>
+</td>
+</tr>
+
+<tr id="_o24" style="display: unnone;">
+<td>24</td>
+<td class="event" data-hoge="o24"><img src="images/24.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順</td>
+<td align="center"><a href="https://youtu.be/UAe5lt_mi0o"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=r_U_R-_U-r-F_R_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o25" style="display: unnone;">
+<td>25</td>
+<td class="event" data-hoge="o25"><img src="images/25.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順</td>
+<td align="center"><a href="https://youtu.be/QLIZUydx0KM"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=F-_r_U_R-_U-r-F_R" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o26" style="display: unnone;">
+<td>26</td>
+<td class="event" data-hoge="o26"><img src="images/26.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順<br>Anti-Sune</td>
+<td align="center"><a href="https://youtu.be/weLTR_ro7jo"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U2_R-_U-_R_U-_R-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o27" style="display: unnone;">
+<td>27</td>
+<td class="event" data-hoge="o27"><img src="images/27.png" width="100" height="100"/></td>
+<td width="300">十字完成形</td>
+<td width="300">ＯＬＬ基本７手順<br>Sune</td>
+<td align="center"><a href="https://youtu.be/-ujTkO0AdVk"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U_R-_U_R_U2-_R-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o28" style="display: unnone;">
+<td>28</td>
+<td class="event" data-hoge="o28"><img src="images/28.png" width="100" height="100"/></td>
+<td width="300">隣接エッジ反転</td>
+<td width="300">最初がRw</td>
+<td align="center"><a href="https://youtu.be/d5XPwdqftvo"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=r_U_R-_U-r-R_U_R_U-R-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o29" style="display: unnone;">
+<td>29</td>
+<td class="event" data-hoge="o29"><img src="images/29.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o30" style="display: unnone;">
+<td>30</td>
+<td class="event" data-hoge="o30"><img src="images/30.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o31" style="display: unnone;">
+<td>31</td>
+<td class="event" data-hoge="o31"><img src="images/31.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o32" style="display: unnone;">
+<td>32</td>
+<td class="event" data-hoge="o32"><img src="images/32.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o33" style="display: unnone;">
+<td>33</td>
+<td class="event" data-hoge="o33"><img src="images/33.png" width="100" height="100"/></td>
+<td width="300">T字（二連あり）</td>
+<td width="300">Ｙパームの最後</td>
+<td align="center"><a href="https://youtu.be/uQc88PAyCg0"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U_R-U-R-F_R_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o34" style="display: unnone;">
+<td>34</td>
+<td class="event" data-hoge="o34"><img src="images/34.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o35" style="display: unnone;">
+<td>35</td>
+<td class="event" data-hoge="o35"><img src="images/35.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o36" style="display: unnone;">
+<td>36</td>
+<td class="event" data-hoge="o36"><img src="images/36.png" width="100" height="100"/></td>
+<td width="300">側面の二連を右にするとＷ字</td>
+<td width="300">右奥のペアを左手前に出して戻して裏でスレッジハンマー</td>
+<td align="center"><a href="https://youtu.be/--Xru1zm4b0"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?type=alg&stage=OLL&alg=R-_U-_R_U-_R-_U_R_U_Lw_U-_Lw-_B&view=fullscreen" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o37" style="display: unnone;">
+<td>37</td>
+<td class="event" data-hoge="o37"><img src="images/37.png" width="100" height="100"/></td>
+<td width="300">２ｘ２の四角</td>
+<td width="300">Yパームの最初</td>
+<td align="center"><a href="https://youtu.be/cBhJs1UoFgU"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=F_R_U-_R-_U-_R_U_R-F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o38" style="display: unnone;">
+<td>38</td>
+<td class="event" data-hoge="o38"><img src="images/38.png" width="100" height="100"/></td>
+<td width="300">側面の二連を右にするとＭ字</td>
+<td width="300">右手前のペアを左奥に出して戻してスレッジハンマー</td>
+<td align="center"><a href="https://youtu.be/f_yu1thXDKY"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?type=alg&stage=OLL&alg=R_U_R-_U_R_U-_R-_U-_R-_F_R_F-&view=fullscreen" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o39" style="display: unnone;">
+<td>39</td>
+<td class="event" data-hoge="o39"><img src="images/39.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o40" style="display: unnone;">
+<td>40</td>
+<td class="event" data-hoge="o40"><img src="images/40.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o41" style="display: unnone;">
+<td>41</td>
+<td class="event" data-hoge="o41"><img src="images/41.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o42" style="display: unnone;">
+<td>42</td>
+<td class="event" data-hoge="o42"><img src="images/42.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o43" style="display: unnone;">
+<td>43</td>
+<td class="event" data-hoge="o43"><img src="images/43.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o44" style="display: unnone;">
+<td>44</td>
+<td class="event" data-hoge="o44"><img src="images/44.png" width="100" height="100"/></td>
+<td width="300">側面に三連バー、上面にグッド</td>
+<td width="300">最も基本のOLLの最初と最後を二層まわし</td>
+<td align="center"><a href="https://youtu.be/3P3Cq1F8OPM"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=f_R_U_R-U-_f-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o45" style="display: unnone;">
+<td>45</td>
+<td class="event" data-hoge="o45"><img src="images/45.png" width="100" height="100"/></td>
+<td width="300">T字（二連なし）</td>
+<td width="300">最も基本のOLL</td>
+<td align="center"><a href="https://youtu.be/wDCaUnXNjJ8"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=F_R_U_R-U-_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o46" style="display: unnone;">
+<td>46</td>
+<td class="event" data-hoge="o46"><img src="images/46.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o47" style="display: unnone;">
+<td>47</td>
+<td class="event" data-hoge="o47"><img src="images/47.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o48" style="display: unnone;">
+<td>48</td>
+<td class="event" data-hoge="o48"><img src="images/48.png" width="100" height="100"/></td>
+<td width="300">V字(黄色の二連が左下)</td>
+<td width="300">基本のOLL45番を二回やる感じ</td>
+<td align="center"><a href="https://youtu.be/kQCHFaFu4j8"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=F_R_U_R-U-R_U_R-U-_F-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o49" style="display: unnone;">
+<td>49</td>
+<td class="event" data-hoge="o49"><img src="images/49.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o50" style="display: unnone;">
+<td>50</td>
+<td class="event" data-hoge="o50"><img src="images/50.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o51" style="display: unnone;">
+<td>51</td>
+<td class="event" data-hoge="o51"><img src="images/51.png" width="100" height="100"/></td>
+<td width="300">中央に一直線。<br>両側に二連があり、ヘッドライトもある</td>
+<td width="300">ヘッドライトを左向きにもつ</td>
+<td align="center"><a href="https://youtu.be/CBpwVovdVC4"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=f_R_U_R-U-R_U_R-U-_f-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o52" style="display: unnone;">
+<td>52</td>
+<td class="event" data-hoge="o52"><img src="images/52.png" width="100" height="100"/></td>
+<td width="300">中央に一直線。<br>片側が三連で反対側が中央</td>
+<td width="300">右後ろのペアに注目</td>
+<td align="center"><a href="https://youtu.be/8V-b-PqfadE"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R-U-_R_U-_R-_U_y-_R-U_R_B" target="_anime">アニメ</a>
+</td>
+</tr>
+
+<tr id="_o53" style="display: unnone;">
+<td>53</td>
+<td class="event" data-hoge="o53"><img src="images/53.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o54" style="display: unnone;">
+<td>54</td>
+<td class="event" data-hoge="o54"><img src="images/54.png" width="100" height="100"/></td>
+<td width="300"></td>
+<td width="300"></td>
+<td align="center"><img width="50%" src="images/non_play_button.png"></a></td>
+<td align="left">
+アニメ
+</td>
+</tr>
+
+<tr id="_o55" style="display: unnone;">
+<td>55</td>
+<td class="event" data-hoge="o55"><img src="images/55.png" width="100" height="100"/></td>
+<td width="300">中央に一直線。<br>側面にも3連が2つ</td>
+<td width="300">スレッジハンマーっぽいのが2回含まれる手順か、別の手順</td>
+<td align="center"><a href="https://youtu.be/_iwFgAPt-Gw"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=Rw_U2-_R2-_F_R_F-_U2-_Rw-_F_R_F-" target="_anime">その１</a><br>
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R-_F_R_U_R_U-_R2-_F-_R2_U-_R-_U_R_U_R-" target="_anime">その２</a>
+</td>
+</tr>
+
+<tr id="_o56" style="display: unnone;">
+<td>56</td>
+<td class="event" data-hoge="o56"><img src="images/56.png" width="100" height="100"/></td>
+<td width="300">中央に一直線。<br>ヘッドライトが二組ある</td>
+<td width="300">45番を回して24番を回すか<br>専用の手順</td>
+<td align="center"><a href="https://youtu.be/Rkklf-zzBfs"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=F_R_U_R-_U-_F-r_U_R-_U-r-F_R_F-" target="_anime">その１</a><br>
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=r-_U-_r_U-_R-_U_R_U-_R-_U_R_r-_U_r" target="_anime">その２</a>
+</td>
+</tr>
+
+<tr id="_o57" style="display: unnone;">
+<td>57</td>
+<td class="event" data-hoge="o57"><img src="images/57.png" width="100" height="100"/></td>
+<td width="300">対面エッジ反転</td>
+<td width="300">最初がR</td>
+<td align="center"><a href="https://youtu.be/-bSfEno37uQ"target="_youtube"><img width="50%" src="images/play_button.png"></a></td>
+<td align="left">
+<a href="https://youcuber.github.io/tools/alg.cubing.net-2018-12-16/?view=fullscreen&type=alg&stage=OLL&alg=R_U_R-_U-_M-_U_R_U-_r-" target="_anime">アニメ</a>
+</td>
+</tr>
+
+
+</table>
+<br>
+<br>
+<br>
+<br>
+</div>
+</body>
+</html>
